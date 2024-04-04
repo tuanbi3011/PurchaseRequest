@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="purchase_request_category" model="ir.module.category">
+            <field name="name">Quyền</field>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="group_user" model="res.groups">
+            <field name="name">Người Dùng</field>
+            <field name="category_id" ref="purchase_request_category"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_admin" model="res.groups">
+            <field name="name">Quản lý</field>
+            <field name="category_id" ref="purchase_request_category"/>
+            <field name="implied_ids" eval="[(4, ref('purchase_request.group_user'))]"/>
+        </record>
+
+        <record id="purchase_user_rule" model="ir.rule">
+            <field name="name">Người dùng có thể xem được đơn hàng của họ</field>
+            <field ref="model_purchase_request" name="model_id"/>
+            <field name="groups" eval="[(4, ref('purchase_request.group_user'))]"/>
+            <field name="domain_force">[('create_uid', '=', user.id)]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="purchase_admin_rule" model="ir.rule">
+            <field name="name">Người dùng có thể xem được đơn hàng của họ</field>
+            <field ref="model_purchase_request" name="model_id"/>
+            <field name="groups" eval="[(4, ref('purchase_request.group_admin'))]"/>
+            <field name="domain_force">[]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

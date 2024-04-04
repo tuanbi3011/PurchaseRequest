@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="purchase_draft" model="mail.message.subtype">
+            <field name="name">Draft</field>
+            <field name="default" eval="False"/>
+            <field name="res_model">purchase.request.line</field>
+        </record>
+        <record id="purchase_wait" model="mail.message.subtype">
+            <field name="name">Wait</field>
+            <field name="default" eval="False"/>
+            <field name="res_model">purchase.request.line</field>
+        </record>
+        <record id="purchase_approved" model="mail.message.subtype">
+            <field name="name">Approved</field>
+            <field name="default" eval="False"/>
+            <field name="res_model">purchase.request.line</field>
+        </record>
+        <record id="purchase_cancel" model="mail.message.subtype">
+            <field name="name">Cancel</field>
+            <field name="default" eval="False"/>
+            <field name="res_model">purchase.request.line</field>
+        </record>
+
+        #stt : 2 chữ cái + 5 số tự sinh
+        <record id="purchase_sequence" model="ir.sequence">
+            <field name="name">Purchase Sequence</field>
+            <field name="code">purchase.request</field>
+            <field name="prefix">PR</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

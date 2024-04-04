@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="product_product_1" model="product.product">
+            <field name="default_code">1</field>
+            <field name="name">1</field>
+            <field name="list_price">10.00</field>
+        </record>
+
+        <record id="product_product_2" model="product.product">
+            <field name="default_code">2</field>
+            <field name="name">2</field>
+            <field name="list_price">20.00</field>
+        </record>
+
+        <record id="product_product_3" model="product.product">
+            <field name="default_code">3</field>
+            <field name="name">3</field>
+            <field name="list_price">30.00</field>
+        </record>
+
+        <record id="product_product_4" model="product.product">
+            <field name="default_code">4</field>
+            <field name="name">4</field>
+            <field name="list_price">40.00</field>
+        </record>
+
+        <record id="product_product_5" model="product.product">
+            <field name="default_code">5</field>
+            <field name="name">5</field>
+            <field name="list_price">50.00</field>
+        </record>
+    </data>
+</odoo>
